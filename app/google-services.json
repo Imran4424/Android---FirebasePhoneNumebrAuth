@@ -1,0 +1,158 @@
+{
+  "project_info": {
+    "project_number": "731266467198",
+    "project_id": "authentication-fe503",
+    "storage_bucket": "authentication-fe503.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731266467198:android:eccf4649d91a7ceaf55f2f",
+        "android_client_info": {
+          "package_name": "com.imran.android.java_firebaseemailauthenticationsdk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731266467198-pt36ij80eno8ivdd25fap3chvh9pbb7l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imran.android.java_firebaseemailauthenticationsdk",
+            "certificate_hash": "a82d8b4f77e082de97985d691ad4ba18807f482e"
+          }
+        },
+        {
+          "client_id": "731266467198-meorm71s6ejhs4hsq3glomq40ntuieqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGymdvYy-O7JBbf_ijUsWh5zRjRrWvEJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731266467198-meorm71s6ejhs4hsq3glomq40ntuieqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731266467198:android:47d257af5831d0b8f55f2f",
+        "android_client_info": {
+          "package_name": "com.imran.android.java_firebaseemailauthenticationui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731266467198-mfa9mlt831iedeanja39kcmi3qp3o202.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imran.android.java_firebaseemailauthenticationui",
+            "certificate_hash": "a82d8b4f77e082de97985d691ad4ba18807f482e"
+          }
+        },
+        {
+          "client_id": "731266467198-meorm71s6ejhs4hsq3glomq40ntuieqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGymdvYy-O7JBbf_ijUsWh5zRjRrWvEJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731266467198-meorm71s6ejhs4hsq3glomq40ntuieqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731266467198:android:ec8362c9ba0810f4f55f2f",
+        "android_client_info": {
+          "package_name": "com.imran.android.javaphonenumberauthentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731266467198-5an14uhsf6cq4kfcsoaj7n5defh3qdbm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imran.android.javaphonenumberauthentication",
+            "certificate_hash": "a82d8b4f77e082de97985d691ad4ba18807f482e"
+          }
+        },
+        {
+          "client_id": "731266467198-meorm71s6ejhs4hsq3glomq40ntuieqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGymdvYy-O7JBbf_ijUsWh5zRjRrWvEJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731266467198-meorm71s6ejhs4hsq3glomq40ntuieqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731266467198:android:00203a22126382bbf55f2f",
+        "android_client_info": {
+          "package_name": "com.imran.android.kotlinphonenumberauthentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731266467198-9m797hckc4k8huc7g7p18d0g2b1hjlfk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imran.android.kotlinphonenumberauthentication",
+            "certificate_hash": "a82d8b4f77e082de97985d691ad4ba18807f482e"
+          }
+        },
+        {
+          "client_id": "731266467198-meorm71s6ejhs4hsq3glomq40ntuieqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGymdvYy-O7JBbf_ijUsWh5zRjRrWvEJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731266467198-meorm71s6ejhs4hsq3glomq40ntuieqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
