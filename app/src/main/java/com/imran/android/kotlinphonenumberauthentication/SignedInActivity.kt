@@ -30,3 +30,4 @@ class SignedInActivity : AppCompatActivity() {
         startActivity(Intent(this, MainActivity::class.java))
     }
 }
+
