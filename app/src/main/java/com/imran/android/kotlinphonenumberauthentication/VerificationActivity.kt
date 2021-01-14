@@ -9,10 +9,8 @@ import android.widget.EditText
 import android.widget.TextView
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.auth.*
+import java.util.concurrent.TimeUnit
 
 class VerificationActivity : AppCompatActivity() {
     private val NUMBER_EXTRA = "NUMBER_EXTRA"
@@ -86,6 +84,23 @@ class VerificationActivity : AppCompatActivity() {
         }
 
         phoneNumber = intent.getStringExtra(NUMBER_EXTRA).toString()
+        textNumberInVerification.text = phoneNumber
+
+        if (!verificationInProgress) {
+            startPhoneNumberVerification(phoneNumber)
+        }
+    }
+
+    private fun startPhoneNumberVerification(phoneNumber: String) {
+        val options = PhoneAuthOptions.newBuilder(firebaseAuth)
+                .setPhoneNumber(phoneNumber)
+                .setTimeout(60L, TimeUnit.SECONDS)
+                .setActivity(this)
+                .setCallbacks(onVerificationStateChangedCallbacks)
+                .build();
+
+        PhoneAuthProvider.verifyPhoneNumber(options)
+        verificationInProgress = true
     }
 
     private fun signInWithPhoneAuthCredential(phoneAuthCredential: PhoneAuthCredential) {
@@ -107,8 +122,13 @@ class VerificationActivity : AppCompatActivity() {
     }
 
     public fun actionSubmit(view: View) {
-        val signedInIntent = Intent(this, SignedInActivity::class.java)
-//        signedInIntent.putExtra(NUMBER_EXTRA, phoneNumber)
-        startActivity(signedInIntent)
+        val code: String =  editTextCode.text.toString()
+        if (code.isEmpty()) {
+            editTextCode.setError("Can not be empty")
+        }
+
+//        val signedInIntent = Intent(this, SignedInActivity::class.java)
+////        signedInIntent.putExtra(NUMBER_EXTRA, phoneNumber)
+//        startActivity(signedInIntent)
     }
 }
