@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
@@ -52,6 +53,7 @@ class VerificationActivity : AppCompatActivity() {
                 //     user action.
                 Log.d(TAG, "onVerificationCompleted:$phoneAuthCredential")
 
+                verificationInProgress = false
                 signInWithPhoneAuthCredential(phoneAuthCredential)
             }
 
@@ -79,7 +81,6 @@ class VerificationActivity : AppCompatActivity() {
                 currentVerificationId = verificationId
                 currentForceResendingToken = token
 
-                // ...
             }
         }
 
@@ -91,20 +92,42 @@ class VerificationActivity : AppCompatActivity() {
         }
     }
 
+    // Get the text code sent so user can use it for sign in
     private fun startPhoneNumberVerification(phoneNumber: String) {
         val options = PhoneAuthOptions.newBuilder(firebaseAuth)
                 .setPhoneNumber(phoneNumber)
                 .setTimeout(60L, TimeUnit.SECONDS)
                 .setActivity(this)
                 .setCallbacks(onVerificationStateChangedCallbacks)
-                .build();
+                .build()
 
         PhoneAuthProvider.verifyPhoneNumber(options)
         verificationInProgress = true
     }
 
+    // Use text to sign in
     private fun signInWithPhoneAuthCredential(phoneAuthCredential: PhoneAuthCredential) {
+        firebaseAuth.signInWithCredential(phoneAuthCredential)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Log.d(TAG, "signInWithCredential:success")
 
+                        val signedInIntent = Intent(this, SignedInActivity::class.java)
+                        signedInIntent.putExtra(NUMBER_EXTRA, phoneNumber)
+                        startActivity(signedInIntent)
+                    } else {
+                        // Sign in failed, display a message and update the UI
+                        if (task.exception is FirebaseAuthInvalidCredentialsException) {
+                            editTextCode.setError("Invalid Code")
+                        }
+                    }
+                }
+    }
+
+    // entered code to manually for log in (code from text)
+    private fun verifyPhoneNumberWithCode(verificationId: String, code: String) {
+        val credential = PhoneAuthProvider.getCredential(verificationId, code)
+        signInWithPhoneAuthCredential(credential)
     }
 
     public fun actionWrongNumber(view: View) {
@@ -125,10 +148,8 @@ class VerificationActivity : AppCompatActivity() {
         val code: String =  editTextCode.text.toString()
         if (code.isEmpty()) {
             editTextCode.setError("Can not be empty")
+        } else {
+            verifyPhoneNumberWithCode(currentVerificationId, code)
         }
-
-//        val signedInIntent = Intent(this, SignedInActivity::class.java)
-////        signedInIntent.putExtra(NUMBER_EXTRA, phoneNumber)
-//        startActivity(signedInIntent)
     }
 }
