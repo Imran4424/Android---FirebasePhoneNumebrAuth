@@ -85,7 +85,7 @@ class VerificationActivity : AppCompatActivity() {
             }
         }
 
-//        phoneNumber =
+        phoneNumber = intent.getStringExtra(NUMBER_EXTRA).toString()
     }
 
     private fun signInWithPhoneAuthCredential(phoneAuthCredential: PhoneAuthCredential) {
