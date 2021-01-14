@@ -25,10 +25,10 @@ class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         spinnerCountry.onItemSelectedListener = this
 
         editTextCountryCode = findViewById(R.id.editTextCountryCode)
-        editTextNumber = findViewById(R.id.editTextCode)
+        editTextNumber = findViewById(R.id.editTextNumberRegister)
 
         countryCodesList =  resources.getStringArray(R.array.country_code)
-//        resources.getStringArray(R.array.country_code).also { countryCodesList = it }
+        resources.getStringArray(R.array.country_code).also { countryCodesList = it }
     }
 
     private fun validatePhoneNumber(): Boolean {

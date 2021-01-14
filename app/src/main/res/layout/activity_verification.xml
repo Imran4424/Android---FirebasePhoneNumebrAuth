@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNumberVerificaion" />
+        app:layout_constraintTop_toBottomOf="@+id/textNumberVerification" />
 
     <Button
         android:id="@+id/buttonSubmit"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextCode" />
 
     <TextView
-        android:id="@+id/textNumberVerificaion"
+        android:id="@+id/textNumberVerification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
